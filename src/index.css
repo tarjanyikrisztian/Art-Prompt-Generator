@@ -13,15 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -46,23 +37,55 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+
+.prompt {
+  --height: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: var(--height);
+  font-size: var(--height);
+  white-space: nowrap;
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.option {
+  padding: 0 0.5rem;
+  padding-top: calc(var(--height) * 4);
+	display: inline-block;
+	vertical-align: top;
+  transition: transform 300ms;
+  height: calc(var(--height) * 5);
+  white-space: nowrap;
+}
+
+
+.subOption {
+  transition: opacity 500ms, text-shadow 100ms;
+  opacity: 1.0;
+}
+
+.visible {
+  opacity: 1.0;
+  text-shadow: 1px 1px 0px hsl(210, 50%, 40%);
+}
+
+.close {
+  opacity: 0.35;
+}
+
+.far {
+  opacity: 0.15;
+}
+
+.distant {
+  opacity: 0.0;
+  display: none;
 }
