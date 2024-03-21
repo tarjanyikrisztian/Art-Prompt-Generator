@@ -211,6 +211,15 @@ function App() {
       object.style.transform = `translateY(${0 - (currentObject * 2)}rem)`
     }
 
+    const changeArtMediumType = (type: string) => {
+      if (type === "2D") {
+        setCurrentArtMediumType("2D")
+      }
+      else {
+        setCurrentArtMediumType("3D")
+      }
+    }
+
 
     useEffect(() => {
       genreUpdate()
@@ -229,13 +238,13 @@ function App() {
           {currentArtMediumType === "2D" ?
             (
               <>
-                <span className='slide selected'>2D</span>
-                <span className='slide'>3D</span>
+                <span className='slide selected' onClick={() => changeArtMediumType("2D")}>2D</span>
+                <span className='slide' onClick={() => changeArtMediumType("3D")}>3D</span>
               </>
             ) : (
               <>
-                <span className='slide'>2D</span>
-                <span className='slide selected'>3D</span>
+                <span className='slide' onClick={() => changeArtMediumType("2D")}>2D</span>
+                <span className='slide selected' onClick={() => changeArtMediumType("3D")}>3D</span>
               </>
             )}
         </div>
